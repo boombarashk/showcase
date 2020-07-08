@@ -1,0 +1,40 @@
+@import 'variables';
+
+.header {
+  box-shadow: @shadow;
+  * {
+    font-weight: 300;
+  }
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 960px;
+    min-height: 73px;
+  }
+
+  &-dropdown-menu {
+
+  }
+
+  &-top-menu {
+    flex:1;
+    text-align: right;
+
+    &-btn {
+      width: 145px;
+      line-height: 1.495em;
+      letter-spacing: .03em;
+    }
+
+    &-btn + &-btn {
+      margin-left: 8px;
+    }
+
+    @media screen and (min-width: 58em) {
+      padding-top: 0.2em;
+    }
+  }
+}

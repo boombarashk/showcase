@@ -1,0 +1,206 @@
+@import 'base.css';
+@import "grids-core.css";
+@import "tables.css";
+@import "buttons-core.css";
+@font-face {
+  font-family: "SegoeUIRegular";
+  src: url('/fonts/SegoeUIRegular.eot');
+  src: url('/fonts/SegoeUIRegular.eot?#iefix') format('embedded-opentype'), url('/fonts/SegoeUIRegular.woff') format('woff'), url('/fonts/SegoeUIRegular.ttf') format('truetype') /*,
+    url('fonts/@{family}.svg#icon') format('svg')*/;
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SegoeUIBold";
+  src: url('/fonts/SegoeUIBold.eot');
+  src: url('/fonts/SegoeUIBold.eot?#iefix') format('embedded-opentype'), url('/fonts/SegoeUIBold.woff') format('woff'), url('/fonts/SegoeUIBold.ttf') format('truetype') /*,
+    url('fonts/@{family}.svg#icon') format('svg')*/;
+  font-weight: normal;
+  font-style: normal;
+}
+.pure-button {
+  font-family: inherit;
+  font-size: 100%;
+  padding: 0.625em;
+  border: none rgba(0, 0, 0, 0);
+  /*IE9 + everything else*/
+  text-decoration: none;
+  border-radius: 10px;
+}
+.pure-button:focus {
+  outline: 0;
+}
+.pure-button[disabled],
+.pure-button-disabled,
+.pure-button-disabled:hover,
+.pure-button-disabled:focus,
+.pure-button-disabled:active {
+  border: none;
+  background-image: none;
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+  pointer-events: none;
+}
+.pure-button-hidden {
+  display: none;
+}
+.pure-button-primary,
+.pure-button-selected,
+a.pure-button-primary,
+a.pure-button-selected {
+  background-color: #00c1ff;
+  color: #fff;
+}
+.pure-button-primary:hover,
+.pure-button-selected:hover,
+a.pure-button-primary:hover,
+a.pure-button-selected:hover {
+  text-decoration: none;
+  background-image: linear-gradient(#00c1ff, #0056f9);
+}
+/* Button Groups */
+.pure-button-group .pure-button {
+  margin: 0;
+  border-radius: 0;
+  border-right: 1px solid #111;
+  /* fallback color for rgba() for IE7/8 */
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+.pure-button-group .pure-button:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.pure-button-group .pure-button:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-right: none;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+button,
+input,
+select,
+textarea,
+.pure-g [class*="pure-u"] {
+  font-family: Helvetica, Arial, sans-serif;
+  letter-spacing: 0.01em;
+}
+html,
+body {
+  height: 100%;
+}
+.flexbox {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 auto;
+  overflow: auto;
+}
+.content {
+  flex-grow: 1;
+}
+/* --------------------------
+ * Element Styles
+ * --------------------------
+*/
+body {
+  margin: 0;
+  min-width: 320px;
+  background-color: #fff;
+  color: #3c3c3b;
+  line-height: 1.6;
+}
+body > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 auto;
+  overflow: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  color: #4b4b4b;
+}
+h3 {
+  font-size: 1.25em;
+}
+h4 {
+  font-size: 1.125em;
+}
+a {
+  color: #00c1ff;
+  /* block-background-text-normal */
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin: 0 0 10px 0;
+}
+aside {
+  background: #1f8dd6;
+  /* same color as selected state on site menu */
+  margin: 1em 0;
+  padding: 0.3em 1em;
+  border-radius: 3px;
+  color: #fff;
+}
+.header {
+  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+}
+.header * {
+  font-weight: 300;
+}
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 960px;
+  min-height: 73px;
+}
+.header-top-menu {
+  flex: 1;
+  text-align: right;
+}
+.header-top-menu-btn {
+  width: 145px;
+  line-height: 1.495em;
+  letter-spacing: 0.03em;
+}
+.header-top-menu-btn + .header-top-menu-btn {
+  margin-left: 8px;
+}
+@media screen and (min-width: 58em) {
+  .header-top-menu {
+    padding-top: 0.2em;
+  }
+}
+.footer {
+  color: #fff;
+  background-color: #3c3c3c;
+}
+h1 {
+  font-family: "SegoeUIRegular";
+}
+/*# sourceMappingURL=index.css.map */

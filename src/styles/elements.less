@@ -1,0 +1,90 @@
+@import "variables";
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    font-family: @base-font;
+    letter-spacing: 0.01em;
+}
+html, body {
+    height: 100%;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.content {
+    flex-grow: 1;
+}
+
+/* --------------------------
+ * Element Styles
+ * --------------------------
+*/
+
+body {
+    & > div {
+        .flexbox;
+    }
+
+    margin: 0;
+    min-width: 320px;
+    background-color: @base-bgcolor;
+    color: @base-color;
+    line-height: 1.6;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: @header-color;
+}
+h3 {
+    font-size: 1.25em;
+}
+h4 {
+    font-size: 1.125em;
+}
+
+a {
+    color: @link-color; /* block-background-text-normal */
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:visited {}
+}
+
+dt {
+    font-weight: bold;
+}
+dd {
+    margin: 0 0 10px 0;
+}
+
+aside {
+    background: #1f8dd6; /* same color as selected state on site menu */
+    margin: 1em 0;
+    padding: 0.3em 1em;
+    border-radius: 3px;
+    color: #fff;
+}
