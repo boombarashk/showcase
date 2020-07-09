@@ -1,7 +1,55 @@
 @import 'variables';
 
 .footer {
-  //height:
+  min-height: 43px;
+  padding-top: 0.4em;
+  font-size: .75em;
+  line-height: 1em;
   color: @footer-color;
   background-color: @footer-bgcolor;
+
+  &-wrapper {
+    .wrapper-inner;
+  }
+
+  &-legal {
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  &-social {
+    text-align: center;
+    flex: 1;
+
+    &-icon {
+      display: inline-flex;
+      width: 29px;
+      height: 29px;
+      background-repeat: no-repeat;
+      background-image: url('../images/social_links.svg');
+      overflow: hidden;
+      margin: 2px 4px 0 5px;
+
+      a {
+        height: 100%;
+        width:100%;
+        text-indent: -40em;
+      }
+
+      &-tw {background-position: 0 0;}
+      &-vk {background-position: -37px 0;}
+      &-fb {background-position: -74px 0;}
+      &-instagram {background-position: -110px 0;}
+
+    }
+  }
+
+  p {
+    margin: 4px 0;
+  }
+
+  a {
+    color: @footer-color;
+  }
 }

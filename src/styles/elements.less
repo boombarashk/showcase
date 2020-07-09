@@ -15,7 +15,7 @@
 
 html, button, input, select, textarea,
 .pure-g [class *= "pure-u"] {
-    font-family: @base-font;
+    font-family: @segoe-regular-fname, @base-font;
     letter-spacing: 0.01em;
 }
 html, body {
@@ -30,8 +30,20 @@ html, body {
     overflow: auto;
 }
 
+.wrapper-inner {
+  display: flex;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 960px;
+}
+
 .content {
-    flex-grow: 1;
+  flex-grow: 1;
+
+  &-wrapper {
+    .wrapper-inner;
+    flex-direction: column;
+  }
 }
 
 /* --------------------------
@@ -53,7 +65,7 @@ body {
 
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
+    font-weight: 300;
     color: @header-color;
 }
 h3 {
