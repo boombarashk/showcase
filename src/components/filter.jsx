@@ -1,14 +1,19 @@
 import React from 'react';
 
-export class Filter extends React.Component {
-
+export class Filter extends React.PureComponent {
     render() {
-        const values = this.props.values
+        const {name, values} = this.props
 
         return (
             <div className="filter-item">
-               <select className="select">
-                   { values.map( value => <option> {value} </option> ) }
+               <select className="select"
+                       value={this.props.value}
+                       onChange={(event) => this.props.onChangeSelected(event, name)}
+               >
+                   { values.map( (value, index) => <option
+                           value={`${index}`}
+                           key={`option-${name}${index}`}> {value} </option>
+                   ) }
                </select>
             </div>
         )
