@@ -14,6 +14,9 @@
 .pure-button:focus {
   outline: 0;
 }
+.pure-button:active {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
+}
 .pure-button[disabled],
 .pure-button-disabled,
 .pure-button-disabled:hover,
@@ -42,6 +45,13 @@ a.pure-button-primary:hover,
 a.pure-button-selected:hover {
   text-decoration: none;
   background-image: linear-gradient(#00c1ff, #0056f9);
+}
+.pure-button-secondary {
+  background-color: #00c1ff;
+  color: #fff;
+}
+.pure-button-secondary:hover {
+  text-decoration: none;
 }
 /* Button Groups */
 .pure-button-group .pure-button {
@@ -103,8 +113,7 @@ body {
 .content-wrapper {
   display: flex;
   margin: 0 auto;
-  padding: 0 20px;
-  max-width: 960px;
+  max-width: 1000px;
   flex-direction: column;
 }
 /* --------------------------
@@ -248,5 +257,75 @@ aside {
 }
 .footer a {
   color: #fff;
+}
+.content-header {
+  text-align: center;
+  font-size: 2em;
+}
+@media screen and (min-width: 48em) {
+  .content-header {
+    font-size: 2.25em;
+  }
+}
+.courses {
+  display: flex;
+  justify-content: center;
+}
+.courses-item {
+  margin: 0 15px 55px;
+  width: 170px;
+  border: 1px solid #b5b5b5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.courses-item-promo {
+  height: 134px;
+}
+.courses-item-promo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.courses-item-info {
+  padding: 10px 16px;
+}
+.courses-item-info p {
+  padding-left: 0.5em;
+}
+.courses-item-info-title {
+  margin: 0 0 1px;
+}
+.courses-item-info-title,
+.courses-item-info-grade {
+  font-size: 0.875em;
+  font-weight: normal;
+}
+.courses-item-info-grade {
+  margin: 0;
+  position: relative;
+  top: -3px;
+}
+.courses-item-info-genre {
+  position: relative;
+  top: 1px;
+  margin: 0 0 2px;
+  font-size: 0.68em;
+}
+.courses-item-info-link {
+  margin: 0 0 -0.5em;
+  font-size: 0.75em;
+  font-weight: 600;
+  line-height: 3em;
+}
+.courses-item-info-label {
+  cursor: default;
+  width: 136px;
+  padding: 0.1em 0 0.2em;
+  font-size: 0.75em;
+  line-height: 1.9em;
+  border-radius: 6px;
+}
+.courses-item-info-label:hover {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
 }
 /*# sourceMappingURL=index.css.map */

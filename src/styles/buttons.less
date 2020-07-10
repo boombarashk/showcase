@@ -9,12 +9,15 @@
 
     text-decoration: none;
     border-radius: @border-radius;
-}
 
-.pure-button:focus {
-    outline: 0;
-}
+    &:focus {
+        outline: 0;
+    }
 
+    &:active {
+        box-shadow: @shadow-active-btn;
+    }
+}
 .pure-button[disabled],
 .pure-button-disabled,
 .pure-button-disabled:hover,
@@ -42,6 +45,14 @@ a.pure-button-selected {
     &:hover {
         text-decoration: none;
         background-image: linear-gradient( @btn-color-base, @btn-color-primary );
+    }
+}
+
+.pure-button-secondary {
+    background-color: @btn-color-base;
+    color: #fff;
+    &:hover {
+        text-decoration: none;
     }
 }
 

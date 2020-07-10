@@ -1,0 +1,72 @@
+@import "variables";
+
+.courses {
+  display: flex;
+  justify-content: center;
+
+  &-item {
+    margin: 0 15px 55px;
+    width: @course-item-width;
+    border: 1px solid @border-color;
+    border-radius: @border-radius;
+    overflow: hidden;
+
+    &-promo {
+      height: @course-item-height-promo;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-info {
+      padding: 10px 16px;
+      p {
+        padding-left: .5em;
+      }
+
+      &-title {
+        margin: 0 0 1px;
+      }
+
+      &-title,
+      &-grade {
+        font-size: .875em;
+        font-weight: normal;
+      }
+      &-grade {
+        margin:0;
+        position: relative;
+        top: -3px;
+      }
+
+      &-genre {
+        position: relative;
+        top: 1px;
+        margin: 0 0 2px;
+        font-size:.68em;
+      }
+
+      &-link {
+        margin: 0 0 -.5em;
+        font-size: .75em;
+        font-weight: 600;
+        line-height: 3em;
+      }
+
+      &-label {
+        cursor: default;
+        width: 136px;
+        padding: 0.1em 0 .2em;
+        font-size: .75em;
+        line-height: 1.9em;
+        border-radius: @border-radius-mid;
+
+        &:hover {
+          box-shadow: @shadow-active-btn;
+        }
+      }
+    }
+  }
+}

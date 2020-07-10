@@ -3,6 +3,7 @@ import {Header} from "./components/header";
 import {Footer} from './components/footer';
 import {FilterBlock} from "./components/filter-block";
 import GlobalFonts from './fonts/fonts';
+import {CourseList} from "./components/course-list";
 
 function App() {
     const TITLE = 'Витрина'
@@ -13,12 +14,12 @@ function App() {
 
           <div className="content">
             <div className="content-wrapper">
-              <h1>{ TITLE }</h1>
+              <h1 className="content-header">{ TITLE }</h1>
 
                 <FilterBlock/>
 
+                <CourseList/>
 
-              Some cources
             </div>
           </div>
 
