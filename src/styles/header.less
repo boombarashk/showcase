@@ -1,7 +1,11 @@
 @import 'variables';
+@import 'burger.css';
 
 .header {
   box-shadow: @shadow;
+
+  &-hidden-h1 { display: none }
+
   * {
     font-weight: 300;
   }
@@ -14,8 +18,19 @@
     padding-right: 4px;
   }
 
-  &-dropdown-menu {
+  &-logo {
+    position: relative;
+    top: 1px;
+  }
 
+  &-dropdown-menu {
+    padding: 8px 0 0 11px;
+    font-size: 1.1em;
+    letter-spacing: 0;
+
+    .menu-burger {
+      cursor: pointer;
+    }
   }
 
   &-top-menu {

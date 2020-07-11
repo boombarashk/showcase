@@ -1,0 +1,127 @@
+.main-wrapper {
+    position: relative;
+}
+
+.menu-burger {
+    font-size: 0;
+    width: 35px;
+    height: 24px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+.menu-burger span {
+    position: absolute;
+    top: 2px;
+    width: 100%;
+    height: 4px;
+    background-color: #00c1ff;
+}
+.menu-burger span::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    top: 10px;
+    background-color: #00c1ff;
+}
+.menu-burger span::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    top: 20px;
+    background-color: #00c1ff;
+}
+
+.menu-list {
+    position: absolute;
+    top: 13px;
+    left: 45px;
+    /*top:50px;
+    left: -14px;*/
+    /*top: -10px;
+    left: 46px;*/
+    border-top: 2px solid #00c1ff;
+    padding: 0px;
+    white-space: nowrap;
+    margin: 0;
+    width: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    opacity: 0;
+    height: 0;
+    background-color: #fff;
+    z-index:10;
+}
+.menu-list__show {
+    animation: menu-list__show .5s ease;
+    animation-fill-mode: both;
+    opacity: 1;
+}
+@keyframes menu-list__show {
+    0% {
+        padding: 0;
+        width: 0;
+        height: 0;
+    }
+    40% {
+        padding: 0;
+        width: 130px;
+        height: 0;
+    }
+    40% {
+        padding: 6px 6px;
+        width: 130px;
+        height: 0;
+    }
+    100% {
+        padding: 6px 6px;
+        width: 130px;
+        height: 200px;
+    }
+}
+.menu-list li{
+    display: block;
+}
+.menu-list ul{
+    padding-left: 20px;
+}
+.menu-list a {
+    line-height: 36px;
+    color: #575756;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-family: inherit;
+}
+.menu-list a:hover {
+    text-decoration: underline;
+}
+
+.menu-host{
+    float: left;
+    margin: 27px 25px 20px 12px;
+}
+
+@media screen and (max-width: 58em) {
+    .menu-host {
+        top: 3px;
+        margin: 23px;
+        position: absolute;
+    }
+}
+@media screen and (min-width: 58em) {
+    .header-nav > .header-link{
+        width:90px;
+    }
+}
+
+@media screen and (max-width: 25.5em) {
+    .menu-host {
+        top: -67px;
+        margin: 23px 0;
+        position:relative;
+    }
+}

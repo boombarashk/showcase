@@ -18,11 +18,27 @@ html, button, input, select, textarea,
     font-family: @segoe-regular-fname, @base-font;
     letter-spacing: 0.01em;
 }
-input, select, textarea {
-  &:focus {
+
+.active-element {
+  padding: .3em .5em;
+  border: 1px solid @border-filter-item-color;
+  border-radius: @border-radius-mid;
+}
+
+select,
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  height: 2.3em;
+  .active-element;
+
+  &:focus, &:active {
     outline: none;
     border-color: @border-active-item-color;
   }
+}
+textarea {
+  .active-element;
 }
 
 html, body {
@@ -40,8 +56,9 @@ html, body {
 .wrapper-inner {
   display: flex;
   margin: 0 auto;
-  padding: 0 20px;
-  max-width: 960px;
+  padding: 0 @gap;
+  max-width:970px;
+  box-sizing: content-box;
 }
 
 .content {
@@ -49,9 +66,7 @@ html, body {
 
   &-wrapper {
       display: flex;
-      margin: 0 auto;
-      max-width: 1000px;
-    //.wrapper-inner;
+    .wrapper-inner;
     flex-direction: column;
   }
 }
@@ -75,7 +90,9 @@ body {
 
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
+  font-weight: 300;
+}
+h1 {
     color: @header-color;
 }
 h3 {

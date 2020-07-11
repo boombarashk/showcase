@@ -1,14 +1,18 @@
 import React from 'react';
 import logo from "../images/logo.svg";
+import {MenuList} from "./menu-list";
 
-export const Header = () => (
+const H1_TITLE = 'Облако знаний'
+
+export const Header = (props) => (
     <header className="header">
         <div className="header-wrapper">
-            <img src={logo} className="App-logo" alt="logo" />
+            <h1 className="header-hidden-h1">{ H1_TITLE }</h1>
+            <a href="/" className="header-logo"><img src={logo} className="header-logo-img" alt={H1_TITLE} /></a>
 
-            <nav className="header-dropdown-menu">
-                *icon*
-            </nav>
+            <div className="header-dropdown-menu">
+                <MenuList stateMenu={ props }/>
+            </div>
 
             <nav className="header-top-menu">
                 <a href="//imumk.ru/showcase" className="header-top-menu-btn pure-button pure-button-primary">Каталог</a>

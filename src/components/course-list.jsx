@@ -1,42 +1,21 @@
 import React from 'react';
 import {Course} from './course'
+import {ALL_GRADE_STR, ALL_GENRE_STR, ALL_SUBJECT_STR} from "./filter-constants";
 
-const fishData = {
-    courseHash: "318195250115271701719214121150250168217123912252217",
-    courseId: "80",
-    description: "280 интерактивных заданий, ↵4 тематические контрольные работы",
-    extId: "Physicon_IMUMK_Course_267727",
-    genre: "Рабочая тетрадь",
-    google_id: "ru.fizikon.physicon_imumk_course_267727",
-    grade: "7",
-    isNew: false,
-    itunes_id: "ru.physicon.imumk.Physicon_IMUMK_Course_267727",
-    lang: "ru",
-    price: 400,
-    priceBonus: 5000,
-    progress: 0,
-    requireUpdate: false,
-    shopUrl: "https://multiring.ru/shop/details/103",
-    size: 0,
-    status: "free",
-    subject: "Алгебра",
-    title: "Рабочая тетрадь. Алгебра, 7 класс",
-    winstore_id: ""
-}
-
-export class CourseList extends React.PureComponent {
+export class CourseList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             error: null,
             isLoaded: false,
-            data: [fishData, fishData],
-            bonusPrice: false
+            data: [],
+            countCourses: 0
         };
+        this.filterData = this.filterData.bind(this)
     }
 
     componentDidMount() {
-/*        fetch("http://krapipl.imumk.ru:8082/api/mobilev1/update", {
+        fetch("http://krapipl.imumk.ru:8082/api/mobilev1/update", {
             method: 'POST',
             body: JSON.stringify({data: ''})
         })
@@ -45,7 +24,8 @@ export class CourseList extends React.PureComponent {
                 (result) => {
                     this.setState({
                         isLoaded: true,
-                        data: result.items
+                        data: result.items,
+                        countCourses: result.items.length
                     });
                 },
                 (error) => {
@@ -54,23 +34,64 @@ export class CourseList extends React.PureComponent {
                         error
                     });
                 }
-            )*/
+            )
     }
 
     render() {
-
-        if (this.state.data.length === 0) return (
+        if (!this.state.isLoaded) return (
             <p>Загрузка..</p>
         )
 
+        const nodataMsg = <div className="courses-nodata">Курсы не найдены</div>
+        if (this.state.countCourses === 0) return (
+            nodataMsg
+        )
+
+        const filteredData = this.filterData(this.props.stateFilter)
+        const countFilteredCourses = filteredData.length
+
+        const subtitle = (<h2 className="content-subheader">&nbsp;
+                {(this.state.countCourses > countFilteredCourses) && 'Результаты поиска:'}
+            </h2>)
+
         return (
-        <div className="courses">
-            { this.state.data.map( course => (
-                <Course data={ course }
-                        key={course.courseHash}
-                        bonusPrice = {this.state.bonusPrice}
-                />
-            )) }
-        </div>
+            <>
+                {subtitle}
+                <div className="courses">
+                    { filteredData.length === 0
+                        ? nodataMsg
+                        : filteredData.map( course => (
+                            <Course data={ course }
+                                    key={course.courseHash}
+                                    viewPriceBonus = {this.props.stateViewPriceBonus}
+                            />
+                        )) }
+                </div>
+                </>
     )}
+
+    /*
+     * структура фильтров src/components/filter-constants.js:19
+     * */
+    filterData(filter){
+        const {data} = this.state
+        const searchString = filter.search.trim()
+
+        if (searchString.length === 0
+            && filter.filter.join('') === [ALL_SUBJECT_STR,ALL_GENRE_STR, ALL_GRADE_STR].join('')) return data;
+
+        return data.filter( course => {
+            if (searchString.length > 0 && course.title.indexOf(searchString) === -1) return false
+
+            if (filter.filter[0] !== ALL_SUBJECT_STR && filter.filter[0] !== course.subject) return false
+
+            if (filter.filter[1] !== ALL_GENRE_STR && filter.filter[1] !== course.genre) return false
+
+            if (filter.filter[2] !== ALL_GRADE_STR && course.grade.indexOf(filter.filter[2]) === -1) return false
+            return true
+        } )
+    }
+
+    checkDefaultFilter(filtr){
+    }
 }

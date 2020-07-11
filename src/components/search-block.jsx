@@ -4,8 +4,8 @@ export class Search extends React.Component {
     render() {
         return (
             <div className="filter-search">
-                <input type="text" />
-                <button>Find..</button>
+                <input className="filter-search-input" type="text" placeholder="Поиск"/>
+                <button className="filter-search-button">Найти</button>
             </div>
         )
     }

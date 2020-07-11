@@ -11,12 +11,16 @@ function App() {
     const TITLE = 'Витрина'
     const [state, dispatch] = useReducer(reducer, initialFilter)
     const [stateViewPriceBonus, setViewPriceBonus] = useState(false)
+    const [stateMenuBurger, toggleMenuBurger] = useState(false)
 
     return (
-      <React.Fragment>
+      <>
         <GlobalFonts/>
+        <div className="reset-helper" onClick={(event) => resetHandler(event, stateMenuBurger, toggleMenuBurger)}>
 
-          <Header/>
+          <Header
+              stateMenuBurger={ stateMenuBurger }
+              toggleMenuBurger={ () => toggleMenuBurger(!stateMenuBurger) }/>
 
           <div className="content">
               <div className="content-wrapper">
@@ -38,8 +42,15 @@ function App() {
           </div>
 
           <Footer/>
-      </React.Fragment>
+        </div>
+      </>
   );
+}
+
+function resetHandler(event, stateMenuBurger, toggleMenuBurger) {
+    if (stateMenuBurger && !event.target.classList.contains('menu-burger')) {
+        toggleMenuBurger(false)
+    }
 }
 
 export default App;
