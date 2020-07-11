@@ -290,6 +290,10 @@ aside {
   border: 1px solid #706f6f;
   border-radius: 6px;
 }
+.toggler-price-button {
+  font-size: 0.833em;
+  border-radius: 6px;
+}
 .courses {
   display: flex;
   justify-content: center;

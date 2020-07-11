@@ -5,8 +5,8 @@ const baseUrl = 'https://www.imumk.ru'
 
 export class Course extends React.PureComponent {
     render() {
-        const {subject, grade, genre, courseId, shopUrl, bonusPrice, price, priceBonus} = this.props.data
-        const label = bonusPrice ? priceBonus : price
+        const {subject, grade, genre, courseId, shopUrl, price, priceBonus} = this.props.data
+        const label = this.props.viewPriceBonus ? priceBonus : price
 
         return (
           <div className="courses-item">
@@ -39,5 +39,5 @@ export class Course extends React.PureComponent {
 
 Course.propTypes = {
     data: PropTypes.object,
-    bonusPrice: PropTypes.bool
+    viewPriceBonus: PropTypes.bool
 }
