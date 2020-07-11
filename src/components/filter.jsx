@@ -6,7 +6,7 @@ export class Filter extends React.PureComponent {
 
         return (
             <div className="filter-item">
-               <select className="select"
+               <select className="filter-item-select"
                        value={this.props.value}
                        onChange={(event) => this.props.onChangeSelected(event, name)}
                >

@@ -90,6 +90,12 @@ textarea,
   font-family: "Segoe UI", Helvetica, Arial, sans-serif;
   letter-spacing: 0.01em;
 }
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #129fea;
+}
 html,
 body {
   height: 100%;
@@ -261,11 +267,28 @@ aside {
 .content-header {
   text-align: center;
   font-size: 2em;
+  margin: 0.55em 0 0.7em;
+  letter-spacing: 0;
 }
 @media screen and (min-width: 48em) {
   .content-header {
     font-size: 2.25em;
   }
+}
+.filter {
+  display: flex;
+  padding-bottom: 60px;
+}
+.filter-item {
+  width: 25%;
+}
+.filter-item-select {
+  box-sizing: border-box;
+  width: calc(100% - 15px);
+  padding: 0.3em 0.5em;
+  height: 2.3em;
+  border: 1px solid #706f6f;
+  border-radius: 6px;
 }
 .courses {
   display: flex;

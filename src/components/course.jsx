@@ -16,7 +16,7 @@ export class Course extends React.PureComponent {
 
             <div className="courses-item-info">
                 <p className="courses-item-info-title">{ subject }</p>
-                <p className="courses-item-info-grade">{ grade } класс{/*ы*/}</p>
+                <p className="courses-item-info-grade">{ this.formatGradeString(grade) }</p>
                 <p className="courses-item-info-genre">{ genre }</p>
 
                 <p className="courses-item-info-link"><a href={ shopUrl }>Подробнее</a></p>
@@ -27,6 +27,13 @@ export class Course extends React.PureComponent {
             </div>
           </div>
         )
+    }
+
+    formatGradeString(grade) {
+        if (grade.indexOf(';') < 0) {
+            return `${grade} класс`
+        }
+        return `${grade.replace(/;/g, '-')} классы`
     }
 }
 

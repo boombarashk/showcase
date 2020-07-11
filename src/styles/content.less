@@ -1,8 +1,28 @@
 .content-header {
   text-align: center;
   font-size: 2em;
+  margin: 0.55em 0 .7em;
+  letter-spacing: 0;
 
   @media screen and (min-width: 48em) {
     font-size: 2.25em
+  }
+}
+
+.filter {
+  display: flex;
+  padding-bottom: 60px;
+
+  &-item {
+    width: 25%; //fixme media
+
+    &-select {
+      box-sizing: border-box;
+      width: calc(100% - @gap);
+      padding: .3em .5em;
+      height: 2.3em;
+      border: 1px solid @border-filter-item-color;
+      border-radius: @border-radius-mid;
+    }
   }
 }
