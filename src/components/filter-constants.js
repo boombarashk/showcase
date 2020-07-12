@@ -25,7 +25,7 @@ export function filterReducer(state, action) {
         case 'filter':
             return { ...initialFilter, filter: action.payload }
         case 'search':
-            return { ...initialFilter, search: action.payload }
+            return { ...initialFilter, search: action.payload.trim() }
         default:
             throw new Error('Error update filters')
     }

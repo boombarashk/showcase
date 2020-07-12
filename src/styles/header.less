@@ -16,11 +16,21 @@
 
     .wrapper-inner;
     padding-right: 4px;
+    @media @tablet-other {
+      display: block;
+    }
   }
 
   &-logo {
     position: relative;
     top: 1px;
+    @media @tablet-other {
+      position: static;
+      display: block;
+      text-align: center;
+      width:100%;
+      padding-top: 10px;
+    }
   }
 
   &-dropdown-menu {
@@ -31,6 +41,12 @@
     .menu-burger {
       cursor: pointer;
     }
+
+    @media @tablet-other {
+      position: fixed;
+      left: 32px;
+      top: 18px;
+    }
   }
 
   &-top-menu {
@@ -39,7 +55,12 @@
 
     &-btn {
       height: 43px;
-      width: 145px;
+      @media @tablet-other {
+        width: 100%;
+      }
+
+        width: 145px;
+
       font-size: 1.1em;
       line-height: 1.1em;
       letter-spacing: .03em;
@@ -47,10 +68,18 @@
 
     &-btn + &-btn {
       margin-left: 8px;
+      @media @tablet-other {
+        margin-top: 10px;
+      }
     }
 
-    @media screen and (min-width: 58em) {
-      padding-top: 0.2em;
+    padding-top: 0.2em;
+
+    @media @tablet-other {
+      padding: 11px 0 25px;
+      a.pure-button:first-child {
+        display: none;
+      }
     }
   }
 }

@@ -7,14 +7,14 @@ export class CourseList extends React.Component {
         super(props);
         this.state = {
             error: null,
-            isLoaded: false,
-            data: [],
-            countCourses: 0
+            isLoaded: true, //false,
+            data: [fishData,fishData2,fishData2,fishData,fishData2,fishData,],
+            countCourses: 6
         };
         this.filterData = this.filterData.bind(this)
     }
 
-    componentDidMount() {
+    componentDidMount() {/*
         fetch("http://krapipl.imumk.ru:8082/api/mobilev1/update", {
             method: 'POST',
             body: JSON.stringify({data: ''})
@@ -34,7 +34,7 @@ export class CourseList extends React.Component {
                         error
                     });
                 }
-            )
+            )*/
     }
 
     render() {
@@ -75,10 +75,9 @@ export class CourseList extends React.Component {
      * */
     filterData(filter){
         const {data} = this.state
-        const searchString = filter.search.trim()
+        const searchString = filter.search
 
-        if (searchString.length === 0
-            && filter.filter.join('') === [ALL_SUBJECT_STR,ALL_GENRE_STR, ALL_GRADE_STR].join('')) return data;
+        if (searchString.length === 0 && this.checkDefaultFilter(filter)) return data;
 
         return data.filter( course => {
             if (searchString.length > 0 && course.title.indexOf(searchString) === -1) return false
@@ -93,5 +92,6 @@ export class CourseList extends React.Component {
     }
 
     checkDefaultFilter(filtr){
+        return filtr.filter.join('') === [ALL_SUBJECT_STR,ALL_GENRE_STR, ALL_GRADE_STR].join('')
     }
 }

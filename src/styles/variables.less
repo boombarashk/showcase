@@ -27,6 +27,22 @@
 @btn-color-primary: #0056f9;
 @btn-color-secondary-hover: #00aee6;
 
+@mobile-old: ~"screen and (max-width: 576px)";
+@mobile: ~"screen and (max-width: 768px)";
+@tablet-other: ~"screen and (max-width: 58em)";
+@tablet-revert: ~"screen and (max-width: 25.5em)";
+@tablet: ~"screen and (min-width: 25.5em)";
+@desktop-wide: ~"screen and (min-width: 48em)";
+@desktop: ~"screen and (min-width: 36em)";
+@desktop-area: 970px;
 @course-item-width: 170px;
 @course-item-height-promo: 134px;
 @search-btn-width: 32px;
+
+.wrapper-inner {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  width: calc(100% - 2*@gap);
+  max-width: @desktop-area;
+}

@@ -16,7 +16,7 @@ function App() {
     return (
       <>
         <GlobalFonts/>
-        <div className="reset-helper" onClick={(event) => resetHandler(event, stateMenuBurger, toggleMenuBurger)}>
+        <div className="flexbox-wrapper reset-helper" onClick={(event) => resetHandler(event, stateMenuBurger, toggleMenuBurger)}>
 
           <Header
               stateMenuBurger={ stateMenuBurger }

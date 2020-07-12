@@ -4,7 +4,7 @@
   margin: 0.55em 0 .7em;
   letter-spacing: 0;
 
-  @media screen and (min-width: 48em) {
+  @media @desktop-wide {
     font-size: 2.25em
   }
 }
@@ -15,24 +15,39 @@
 }
 
 .filter {
-  display: flex;
+  .wrapper-inner;
+
+  @media @mobile {
+    flex-wrap: wrap;
+  }
 
   &-item {
-    width: 25%;
-    @media screen and (min-width: 36em) {
-      width: 33.333%;
+    flex: 0 0 25%;
+
+    @media @mobile {
+      flex: 0 0 33.33%;
+      margin-bottom: @gap;
+    }
+
+    @media @mobile-old {
+      flex: 0 0 100%;
     }
 
     &-select {
       box-sizing: border-box;
       width: calc(100% - @gap);
+      @media @mobile-old {
+        width: 100%;
+      }
     }
   }
 
   &-search {
-/*    &-input {
-      width: calc(100% - @search-btn-width);
-    }*/
+    flex-grow: 1;
+    &-input {
+      width: calc(100% - (@search-btn-width + 8px));
+
+    }
 
     &-button {
       outline: none;
@@ -52,11 +67,15 @@
 }
 
 .toggler-price {
-  width: 25%;
+  width: calc(25% - @gap/2);
+  @media @mobile {
+    width: calc(100% - @gap*2);
+  }
   align-self: flex-end;
-  margin-top: @gap;
+  margin: @gap @gap 0;
 
   &-button {
+    width: 100%;
     font-size: .833em;
     border-radius: @border-radius-mid;
   }

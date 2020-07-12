@@ -41,7 +41,7 @@ textarea {
   .active-element;
 }
 
-html, body {
+html, body, body > div {
     height: 100%;
 }
 
@@ -53,20 +53,13 @@ html, body {
     overflow: auto;
 }
 
-.wrapper-inner {
-  display: flex;
-  margin: 0 auto;
-  padding: 0 @gap;
-  max-width:970px;
-  box-sizing: content-box;
-}
-
 .content {
   flex-grow: 1;
+  box-sizing: content-box;
 
   &-wrapper {
-      display: flex;
     .wrapper-inner;
+    max-width: @desktop-area + 2*@gap;
     flex-direction: column;
   }
 }
@@ -77,7 +70,7 @@ html, body {
 */
 
 body {
-    & > div {
+    .flexbox-wrapper {
         .flexbox;
     }
 

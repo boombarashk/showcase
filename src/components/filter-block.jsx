@@ -1,6 +1,6 @@
 import React from 'react';
 import {Filter} from "./filter";
-import {Search} from "./search-block";
+import SearchBlock from "./search-block";
 import { FILTER_VALUES } from "./filter-constants";
 
 const countFilters = FILTER_VALUES.length
@@ -27,7 +27,7 @@ export class FilterBlock extends React.Component {
                         onChangeSelected = { this.onChangeSeleted }/>
             )) }
 
-            <Search />
+            <SearchBlock onChangeSearch={this.props.onChangeSearch}/>
         </div>
     )}
 

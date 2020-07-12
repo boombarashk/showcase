@@ -2,24 +2,41 @@
 
 .footer {
   min-height: 43px;
+  //min-height: 49px;
   padding-top: 0.4em;
+  @media @mobile-old{
+    min-height: auto;
+  }
   font-size: .75em;
   line-height: 1em;
   color: @footer-color;
   background-color: @footer-bgcolor;
 
   &-wrapper {
+    flex-wrap: wrap;
     .wrapper-inner;
   }
 
   &-legal {
+    @media @mobile-old {
+      order:1;
+      flex: 0 0 50%;
+    }
     &:last-child {
+      @media @mobile-old {
+        order: 2;
+      }
       text-align: right;
     }
   }
 
   &-social {
     text-align: center;
+    @media @mobile-old {
+      padding: 30px 0;
+      order: 3;
+      flex: 0 0 100%;
+    }
     flex: 1;
 
     &-icon {
