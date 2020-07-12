@@ -8,13 +8,13 @@ export class CourseList extends React.Component {
         this.state = {
             error: null,
             isLoaded: true, //false,
-            data: [fishData,fishData2,fishData2,fishData,fishData2,fishData,],
-            countCourses: 6
+            data: [],
+            countCourses: 0
         };
         this.filterData = this.filterData.bind(this)
     }
 
-    componentDidMount() {/*
+    componentDidMount() {
         fetch("http://krapipl.imumk.ru:8082/api/mobilev1/update", {
             method: 'POST',
             body: JSON.stringify({data: ''})
@@ -34,7 +34,7 @@ export class CourseList extends React.Component {
                         error
                     });
                 }
-            )*/
+            )
     }
 
     render() {
