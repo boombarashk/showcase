@@ -87,6 +87,7 @@ export class CourseList extends React.Component {
             if (filter.filter[1] !== ALL_GENRE_STR && filter.filter[1] !== course.genre) return false
 
             if (filter.filter[2] !== ALL_GRADE_STR && course.grade.indexOf(filter.filter[2]) === -1) return false
+            if (+filter.filter[2] === 1 && (course.grade.length > 1 || course.grade[1] === ";")) return false
             return true
         } )
     }
